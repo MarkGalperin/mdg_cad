@@ -55,8 +55,12 @@ def reduce_fraction(num,denom):
 # Machining functions #
 # ******************* #
 
-def sfm2rpm(sfm,D):
-    rpm = sfm*(304.8/(pi*D))
+def sfm2rpm(sfm,D,D_unit = 'mm'):
+    
+    if D_unit == 'mm':
+        rpm = sfm*(304.8/(pi*D))
+    elif D_unit == 'in':
+        rpm = sfm*(12/(pi*D))
     return rpm
 
 
